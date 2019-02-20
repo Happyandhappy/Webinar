@@ -503,13 +503,14 @@
     // (Note that this demo uses a wider set of styles than the guide below.)
     var style = {
       base: {
-        color: "#32325d",
+        color: "white",
         fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
         fontSmoothing: "antialiased",
         fontSize: "16px",
         "::placeholder": {
           color: "#aab7c4"
-        }
+        },
+        iconColor:"#a5a5a5"
       },
       invalid: {
         color: "#fa755a",
@@ -537,6 +538,7 @@
     var form = document.getElementById("StripeForm");
     form.addEventListener("submit", function(event) {
       event.preventDefault();
+      submitMSG(1, '');
       if (document.getElementById("stripeToken").value !== "") {
         stripeTokenHandler(document.getElementById("stripeToken").value);
         return;

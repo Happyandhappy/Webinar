@@ -1,15 +1,9 @@
 from flask import Flask, redirect, render_template, url_for, request
 import requests
 import stripe
+from config import *
 
 app = Flask(__name__)
-SUB_URL = "http://sendy.pythonfinancial.com/subscribe"
-LIST_ID = "s2EL0xrLeLx1P0Zf892nNGfQ"
-API_KEY = "r0cN1vPLKgk0vIBy3qsG"
-
-STRIPE_PUB_KEY="pk_test_LQBJ3uc2BuxrsS2dHsiofCl1"
-STRIPE_SEC_KEY = "sk_test_c93y7N2InX6bQTbjWjhNfBz8"
-
 stripe.api_key = STRIPE_SEC_KEY
 
 def validate(names, form):

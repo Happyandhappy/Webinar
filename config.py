@@ -1,0 +1,5 @@
+SUB_URL = "http://sendy.pythonfinancial.com/subscribe"
+LIST_ID = "s2EL0xrLeLx1P0Zf892nNGfQ"
+API_KEY = "r0cN1vPLKgk0vIBy3qsG"
+STRIPE_PUB_KEY="pk_test_LQBJ3uc2BuxrsS2dHsiofCl1"
+STRIPE_SEC_KEY = "sk_test_c93y7N2InX6bQTbjWjhNfBz8"
