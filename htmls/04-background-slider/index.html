@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	
+	<!-- Website Title -->
+	<title>Argo - Training Course Landing Page Template</title>
+	
+	<!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
+	<meta property="og:site_name" content="" /> <!-- website name -->
+	<meta property="og:site" content="" /> <!-- website link -->
+	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article" />
+	
+	<!-- SEO Meta Tags -->
+	<meta name="description" content="Training course HTML landing page template built with Bootstrap featuring countdown timer and 3 registration form versions.">
+	<meta name="keywords" content="training, course, online, tutorial, learn, company, instructor, coaching, startup, school, registration, contact form, html template, landing page, bootstrap">
+	
+	<!-- Styles -->
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,500,700" rel="stylesheet">
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/material-design-iconic-font.css" rel="stylesheet">
+	<link href="css/swiper.css" rel="stylesheet">
+	<link href="css/magnific-popup.css" rel="stylesheet">
+	<link href="css/styles.css" rel="stylesheet">
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="images/favicon.png">
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+</head>
+<body data-spy="scroll" data-target=".navbar-fixed-top">
+	
+	<!-- Preloader -->
+	<div class="spinner-wrapper">
+		<div class="spinner">
+			<div class="bounce1"></div>
+			<div class="bounce2"></div>
+			<div class="bounce3"></div>
+		</div>
+	</div>
+	
+	
+	<!-- NAVIGATION -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+			<div class="row">
+				<div class="navbar-header page-scroll">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand page-scroll" href="header"><img src="images/logo.svg" alt="logo"></a>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="navbar-collapse collapse" id="myNavbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="active"><a class="page-scroll" href="#header">HOME</a></li>
+						<li><a class="page-scroll" href="#overview">OVERVIEW</a></li>
+						<li><a class="page-scroll" href="#details">DETAILS</a></li>
+						<li><a class="page-scroll" href="#pricing">PRICING</a></li>
+						<li><a class="page-scroll" href="#facts">FACTS</a></li>
+						<li><a class="page-scroll" href="#instructors">INSTRUCTORS</a></li>
+						<li><a class="page-scroll" href="#frequent-questions">FAQ</a></li>
+						<li><a class="page-scroll" href="#footer">CONTACT</a></li>
+					</ul>
+				</div>
+				
+			</div>
+        </div>
+    </div> <!-- end of navigation -->
+	
+
+	<!--- HEADER -->
+	<header id="header" class="header">
+		<div class="flex-container-wrapper"> <!-- IE fix for vertical alignment in flex box -->
+			<div class="header-content">
+			
+				<!-- Swiper -->
+				<div class="swiper-container-header">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide first">
+							<div class="slider-background">
+							</div>
+						</div>
+						<div class="swiper-slide second">
+							<div class="slider-background">
+							</div>
+						</div>
+						<div class="swiper-slide third">
+							<div class="slider-background">
+							</div>
+						</div>
+					</div>
+				</div> <!-- end of swiper container header -->
+				
+				<div class="content-overlay">
+					<div class="container">
+						<div class="row">
+							<div class="header-content-wrapper">
+								<div class="col-md-6">
+									<h1>Sell Online Like A Pro</h1>
+									<p>Learn how to master online selling in 4 weeks of intensive online training. Limited registration time!</p>
+									<div class="countdown text-center">
+										<span id="clock"></span>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<form id="RegistrationForm" data-toggle="validator">
+										<p><strong>First Name *</strong></p>
+										<div class="form-group">
+											<input type="text" class="form-control-input" id="firstname" placeholder="First Name" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<p><strong>Last Name *</strong></p>
+										<div class="form-group">
+											<input type="text" class="form-control-input" id="lastname" placeholder="Last Name" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<p><strong>Phone Number *</strong></p>
+										<div class="form-group">
+											<input type="text" class="form-control-input" id="phone" placeholder="Phone Number" required>
+											<div class="help-block with-errors"></div>
+										</div>
+										
+										<p><strong>Email Address *</strong></p>
+										<div class="form-group">
+											<input type="email" class="form-control-input" id="email" placeholder="Email" required>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<div class="form-group">
+											<input type="checkbox" id="terms" value="Agreed-to-Terms" required> Agree to our <a class="show-terms popup-with-move-anim" href="#terms-and-conditions">terms and conditions</a>
+											<div class="help-block with-errors"></div>
+										</div>
+
+										<!-- Magnific Popup Terms And Conditions Content -->
+										<!-- mfp-hide class is required to keep the content hidden until the visitor clicks the button -->
+										<div id="terms-and-conditions" class="terms-and-conditions-container zoom-anim-dialog mfp-hide">
+											<div class="row">
+												<button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+												<div class="col-md-12">
+													<h3>Terms & Conditions</h3>
+													<hr>
+													<h4>1. Introduction</h4>
+													<p>Website terms and conditions may perform a number of different roles. They may be used to satisfy legal disclosure obligations, to grant users rights to use website materials, to impose acceptable use obligations, to limit (or attempt to limit) warranties and disclaim (or attempt to disclaim) liabilities, and more generally to structure the legal relationships between the website operator and users.</p>
+													<h4>2. Terms List</h4>
+													<ul>
+														<li>License to use website</li>
+														<li>Limitations of liability</li>
+														<li>Breaches of these terms and conditions</li>
+														<li>Registrations and authorizations</li>
+														<li>These website terms and conditions</li>
+													</ul>
+													<h4>3. Reasonableness Details</h4>
+													<p>This terms and conditions document covers some of the same ground as our website disclaimer and website copyright notice documents. It should be used in conjunction with a privacy policy document. The terms and conditions contain the following sections.</p>
+													<h4>4. Credibility Conditions</h4>		
+													<p>The types of personal information collected, and the uses to which it is typically put, depend in part upon the type of website and business that is collecting the information. An ecommerce store, for example, will collect or generate customer name and address information, payment information and order information. </p>
+													<div class="highlight-box">
+														<p>The classes of personal information will be put to different uses. For example, address information will be used for delivering products, and may also be used in marketing; whereas payment information will be used to collect payments and for accounting purposes. Some kinds of website – notably social networking websites and websites with social networking features – may collect and process huge amounts of personal information.</p>
+													</div>
+													<div class="buttons">
+														<a class="button-outline mfp-close as-button" href="#header">BACK</a>
+													</div>
+												</div>
+											</div>
+										</div>
+										<button type="submit" class="form-control-submit-button">REGISTER NOW</button>
+										<div class="form-message">
+											<div id="msgSubmit" class="h3 text-center hidden"></div>
+										</div>
+									</form>
+								</div> <!-- end of col-md-6 -->
+							</div> <!-- end of header-content-wrapper -->
+						</div>
+					</div>
+				</div>
+			</div> <!-- end of header-content -->
+		</div> <!-- end of IE vertical alignment fix -->
+	</header> <!-- end of header -->
+	
+
+	<!-- TESTIMONIALS -->
+	<div class="testimonials">
+		<div class="container">
+			<div class="row">
+				<div id="quote" class="carousel slide" data-ride="carousel" data-interval="6000">
+					<ol class="carousel-indicators">
+						<li data-target="#quote" data-slide-to="0" class="active"></li>
+						<li data-target="#quote" data-slide-to="1"></li>
+						<li data-target="#quote" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner" role="listbox">
+						<div class="item active">
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"The most convenient way to learn how to sell online at an affordable price. I am glad I found Argo and I recommend it."</p>
+								<h5>Mary Fitzgerald</h5>
+							</div>
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"I was looking for an online resource to start learning how to sell online and I am very happy I found Argo Course."</p>
+								<h5>John Frown</h5>
+							</div>
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"My background has absolutely no connection with online selling but I managed to reach my goals in 2 months with Argo."</p>
+								<h5>Mike Town</h5>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"My boss pushed me to take this training course about selling online and now I am grateful he did. My skills are updated"</p>
+								<h5>Judy Smithfield</h5>
+							</div>
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"Online selling is all about analysis, planning and action. I've learned this in Argo Training Course and it didn't fail me."</p>
+								<h5>Ruben May</h5>
+							</div>
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"All those years spent losing a ton of potential customers, it almost scares me. Now I'm on top of the game and my team too."</p>
+								<h5>Sully McLane</h5>
+							</div>
+						</div>
+						<div class="item">
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"In a few words Argo Training Course is probably the best experience I ever had. Teachers are great and the community."</p>
+								<h5>Ron Blake</h5>
+							</div>
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"My only gripe with Argo Training Course is not finding it sooner. Now that I did I am very happy to lear about selling."</p>
+								<h5>Paula Jerry</h5>
+							</div>
+							<div class="col-md-4">
+								<img class="img-circle" src="http://placehold.it/110x110/aaa/393d48/" alt="customer testimonial">
+								<p class="mb-0">"Best value compared to the price. You will not find another training course about online selling as good as this one."</p>
+								<h5>Simone Finley</h5>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end of quote -->
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of testimonials -->
+	
+	
+	<!-- OVERVIEW -->
+	<div id="overview" class="overview">
+		<div class="container">
+			<h2>Overview</h2>
+			<img class="decorative-line" src="images/decorative-line.svg" alt="decorative line">
+			<p class="seventy-percent-width">Learn in <strong>just 3 days</strong> how to improve your online selling techniques by attending Argo's online selling training course. Our instructors are prepared to answer any questions about sales and marketing.</p>
+			<img class="img-responsive" src="http://placehold.it/900x367/aaa/393d48/" alt="dashboard">
+		</div> <!-- end of container -->
+	</div> <!-- end of overview -->
+	
+	
+	<!-- DURATION -->
+	<div class="duration">
+		<div class="container">
+			<h2 class="text-center">Duration</h2>
+			<img class="decorative-line" src="images/decorative-line.svg" alt="decorative line">
+			<p class="seventy-percent-width">Argo's training course will take you through 3 major stages of the online selling process and will help you design your own strategy. Find below this section the <a class="page-scroll" href="#details">details for each day</a></p>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="duration-pane">
+						<div class="day-circle">1</div>
+						<h3>Market Analysis</h3>
+						<p>We'll start the training course by making a thorough analysis of our business environment</p>
+						<ul class="fa-ul">
+							<li><i class="fa-li fa fa-square"></i>Instructor: <strong>Pauline Smith</strong></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="duration-pane">
+						<div class="day-circle">2</div>
+						<h3>Sales Planning</h3>
+						<p>After collecting the right market input we can dive into creating efficient sales strategies</p>
+						<ul class="fa-ul">
+							<li><i class="fa-li fa fa-square"></i>Instructor: <strong>Mike Brown</strong></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="duration-pane">
+						<div class="day-circle">3</div>
+						<h3>Evaluation Time</h3>
+						<p>Campaigns need to be evaluated in order to understand the results and prepare for the future</p>
+						<ul class="fa-ul">
+							<li><i class="fa-li fa fa-square"></i>Instructor: <strong>Ronnie Blake</strong></li>
+						</ul>
+					</div>
+				</div>
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of duration -->
+	
+	
+	<!-- DETAILS -->
+	<div id="details" class="details">
+		<div class="container">
+			<h2 class="text-center">Details</h2>
+			<img class="decorative-line" src="images/decorative-line.svg" alt="decorative line">
+			
+			<!-- Tabs -->
+			<div class="details-tabs">
+			<ul class="nav nav-pills nav-justified">
+				<li class="active"><a href="#tab_a" data-toggle="tab">DAY 1</a></li>
+				<li><a href="#tab_b" data-toggle="tab">DAY 2</a></li>
+				<li><a href="#tab_c" data-toggle="tab">DAY 3</a></li>
+			</ul>
+			</div>
+			
+			<!-- Tab Content -->
+			<div class="tab-content">
+				<!-- Tab_a -->
+				<div class="tab-pane tab-a fade in active" id="tab_a">
+					<div class="row">
+						<div class="col-md-7 col-lg-6">
+							<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingOne">
+										<h4 class="panel-title clearfix">
+											<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+												<span class="circle-numbering">A</span><span class="panel-title-text">Analyze The Market</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										<div class="panel-body">
+											In order to design a successful marketing strategy you need to understand your business environment very well. In this starting chapter, we'll give you the right tools and methods to analyze the market and gather data.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingTwo">
+										<h4 class="panel-title clearfix">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+												<span class="circle-numbering">B</span><span class="panel-title-text">The Right Conclusions</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+										<div class="panel-body">
+											With all that market data it's very easy to feel overwhelmed so we've prepared a few techniques to help you draw the right conclusions from the market reports. Then you will feel confident enough to plan your sales strategy.
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading" role="tab" id="headingThree">
+										<h4 class="panel-title clearfix">
+											<a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+												<span class="circle-numbering">C</span><span class="panel-title-text">Add More Value</span>
+											</a>
+										</h4>
+									</div>
+									<div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+										<div class="panel-body">
+											Especially in crowded marketplaces, it can be difficult to differentiate your course or service from the competition. Argo's course will give you the right skills to help you identify hidden value and present it to your customers.
+										</div>
+									</div>
+								</div>
+							</div> <!-- end of panel-group -->
+						</div>
+						<div class="col-md-5 col-lg-6">
+							
+							<!-- Image Gallery Swiper -->
+							<div class="my-swiper-container img-rounded">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide"><a href="http://placehold.it/820x600/aaa/393d48/" class="popup-link" data-effect="fadeIn"><img class="img-responsive" src="http://placehold.it/820x600/aaa/393d48/" alt="software image"></a></div>
+									<div class="swiper-slide"><a href="http://placehold.it/820x600/aaa/393d48/" class="popup-link" data-effect="fadeIn"><img class="img-responsive" src="http://placehold.it/820x600/aaa/393d48/" alt="software image"></a></div>
+									<div class="swiper-slide"><a href="http://placehold.it/820x600/aaa/393d48/" class="popup-link" data-effect="fadeIn"><img class="img-responsive" src="http://placehold.it/820x600/aaa/393d48/" alt="software image"></a></div>
+									<div class="swiper-slide"><a href="http://placehold.it/820x600/aaa/393d48/" class="popup-link" data-effect="fadeIn"><img class="img-responsive" src="http://placehold.it/820x600/aaa/393d48/" alt="software image"></a></div>
+								</div>
+								<!-- Add Arrows -->
+								<div class="swiper-button-next"></div>
+								<div class="swiper-button-prev"></div>
+							</div> <!-- end of image gallery swiper -->
+						</div>
+					</div>
+				</div> <!-- end of tab_a -->
+				
+				<!-- Tab_b -->
+				<div class="tab-pane tab-b fade" id="tab_b">
+					<div class="row">
+						<div class="col-md-6 col-lg-7">
+							<img class="img-responsive img-rounded" src="http://placehold.it/1280x790/aaa/393d48/" alt="details image">
+						</div>
+						<div class="col-md-6 col-lg-5">
+							<div class="text-pane">
+								<h3>Sales Planning And Marketing Strategies</h3>
+								<p>Argo's training course enables you to create the best sales plan using <a href="#your-link-here">Kotler's methodology</a> and sets up your course or service for success.</p>
+								<ul class="fa-ul">
+									<li><i class="fa-li fa fa-check-square-o"></i>Proven strategies which work in real life scenarios</li>
+									<li><i class="fa-li fa fa-check-square-o"></i>Effortles planning for time constrained people</li>
+									<li><i class="fa-li fa fa-check-square-o"></i>High success ratios for those who are commited</li>
+								</ul>
+								<a class="button-solid page-scroll" href="#header">REGISTER NOW</a>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end of tab_b -->
+				
+				<!-- Tab_c -->
+				<div class="tab-pane tab-c fade" id="tab_c">
+					<div class="row">
+						<div class="col-md-6 col-lg-5">
+							<div class="text-pane">
+								<div class="features-row clearfix">
+									<span class="fa fa-flag fa-3x"></span>
+									<h4>Campaign Evaluation</h4>
+									<p class="clearfix">In day 3 of Argo training course we're going to take a look at campaign evaluation methods.</p>
+								</div>
+								<div class="features-row clearfix">
+									<span class="fa fa-calendar-check-o fa-3x"></span>
+									<h4>Performance Reports</h4>
+									<p class="clearfix">Everyone's scared about generating reports so we've prepared a few great tips & tricks.</p>
+								</div>
+								<div class="features-row clearfix">
+									<span class="fa fa-comments-o fa-3x"></span>
+									<h4>What To Do Next</h4>
+									<p class="clearfix">Clearly you can't stop learning about your business after 3 days so we'll point you in the right direction.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-7">
+							<img class="img-responsive img-rounded" src="http://placehold.it/1280x790/aaa/393d48/" alt="details image">
+						</div>
+					</div>
+				</div> <!-- end of tab_c -->
+			</div> <!-- end of tab content -->
+		</div> <!-- end of container -->
+	</div> <!-- end of details -->
+	
+	
+	<!-- PRICING -->
+	<div id="pricing" class="pricing">
+		<div class="container">
+			<h2>Pricing</h2>
+			<img class="decorative-line" src="images/decorative-line.svg" alt="decorative line">
+			<p class="seventy-percent-width">When you register you get access to the entire 3 days course which will enable you to understand your business environment, devise a realistic development strategy and how to effectively act on it. Of course we'll also teach you how to evaluate your actions and take the right decisions.</p>
+			<p class="above-price">$199 Regular</p>
+			<p class="price"><span class="price-value">$99</span> Limited Offer</p>
+			<a class="button-solid page-scroll" href="#header">REGISTER NOW</a>
+		</div> <!-- end of container -->
+	</div> <!-- end of pricing -->
+	
+	
+	<!-- FACTS 1 -->
+	<div id="facts" class="facts-1 clearfix">
+		<div class="facts-1-image-pane">
+		</div>
+		
+		<div class="facts-1-text-pane">
+			<div class="facts-1-text-pane-container">
+				<div class="facts-wrapper">
+					<h3>Argo's Training Will...</h3>
+					<ul class="zmdi-hc-ul">
+						<li><i class="zmdi-hc-li zmdi zmdi-check zmdi-hc-3x"></i>Teach you how to analyze and understand your business environment for better decision making</li>
+						<li><i class="zmdi-hc-li zmdi zmdi-check zmdi-hc-3x"></i>Help you find hidden value in your courses and services and launch them succesfully</li>
+						<li><i class="zmdi-hc-li zmdi zmdi-check zmdi-hc-3x"></i>Provide you with the best tactical ideas to act on your marketing strategy</li>
+						<li><i class="zmdi-hc-li zmdi zmdi-check zmdi-hc-3x"></i>Highly increase your confidence level to undertake bolder projects in your industry</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> <!-- end of facts-1 -->
+	
+	
+	<!-- FACTS 2 -->
+	<div class="facts-2 clearfix">
+		<div class="facts-2-image-pane">
+		</div>
+
+		<div class="facts-2-text-pane">
+			<div class="facts-2-text-pane-container clearfix">
+				<div class="facts-wrapper">
+					<h3>Argo's Training Will Not...</h3>
+					<ul class="zmdi-hc-ul">
+						<li><i class="zmdi-hc-li zmdi zmdi-close zmdi-hc-3x"></i>Waste 3 days of your life for nothing because the course is packed with highly valuable data</li>
+						<li><i class="zmdi-hc-li zmdi zmdi-close zmdi-hc-3x"></i>Provide you with untested methods and techniques because everything we teach is from real-life</li>
+						<li><i class="zmdi-hc-li zmdi zmdi-close zmdi-hc-3x"></i>Make you spend 199 dollars without improving your skills ten times more than you would imagine</li>
+						<li><i class="zmdi-hc-li zmdi zmdi-close zmdi-hc-3x"></i>Leave you stranded at the end of the course beacuse it will guide you towards reaching your goals</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div> <!-- end of facts-2 -->
+	
+	
+	<!-- INSTRUCTORS -->
+	<div id="instructors" class="instructors">
+		<div class="container text-center">
+			<h2 class="text-center">Instructors</h2>
+			<img class="decorative-line" src="images/decorative-line.svg" alt="decorative line">
+			<div class="row">
+				<div class="instructor-pane">
+					<a class="popup-with-move-anim" href="#instructor-1">
+						<div class="instructor-image">
+							<img class="img-responsive img-rounded" src="http://placehold.it/722x704/aaa/393d48/" alt="instructor">
+							<div class="hover-overlay">
+								<p>Pauline has a great passion for online marketing campaigns which she nurtured...</p>
+								<p class="read-more">Read More</p>
+							</div>
+						</div>
+					</a>
+					<div class="instructor-info text-center">
+						<a class="popup-with-move-anim" href="#instructor-1">
+							<h5>Pauline Smith</h5>
+							<p>Online Marketing Specialist</p>
+						</a>
+						<div class="instructor-social">
+							<span class="fa-stack fa">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="instructor-pane">
+					<a class="popup-with-move-anim" href="#instructor-2">
+						<div class="instructor-image">
+							<img class="img-responsive img-rounded" src="http://placehold.it/722x704/aaa/393d48/" alt="instructor">
+							<div class="hover-overlay">
+								<p>Mike has a great passion for creating and deploying online sales strategies...</p>
+								<p class="read-more">Read More</p>
+							</div>
+						</div>
+					</a>
+					<div class="instructor-info text-center">
+						<a class="popup-with-move-anim" href="#instructor-2">
+							<h5>Mike Brown</h5>
+							<p>Business Developer</p>
+						</a>
+						<div class="instructor-social">
+							<span class="fa-stack fa">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="instructor-pane">
+					<a class="popup-with-move-anim" href="#instructor-3">
+						<div class="instructor-image">
+							<img class="img-responsive img-rounded" src="http://placehold.it/722x704/aaa/393d48/" alt="instructor">
+							<div class="hover-overlay">
+								<p>Ronnie loves to find value where nobody thinks is possible and present it to the...</p>
+								<p class="read-more">Read More</p>
+							</div>
+						</div>
+					</a>
+					<div class="instructor-info text-center">
+						<a class="popup-with-move-anim" href="#instructor-3">
+							<h5>Ronnie Blake</h5>
+							<p>Web Content Creator</p>
+						</a>
+						<div class="instructor-social">
+							<span class="fa-stack fa">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- end of container -->
+	</div> <!-- end of instructors -->
+	
+	
+	<!-- Magnific Popup Instructor Details Content -->
+	<!-- mfp-hide class is required to keep the content hidden until the visitor clicks the button -->
+	<div id="instructor-1" class="instructor-details-container zoom-anim-dialog mfp-hide">
+		<div class="row">
+			<button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+			<div class="col-md-7">
+				<img class="img-responsive img-rounded" src="http://placehold.it/722x704/aaa/393d48/" alt="details image">
+			</div>
+			<div class="col-md-5">
+				<h3>Pauline Smith</h3>
+				<hr>
+				<h4>Online Marketing Specialist</h4>
+				<p>Pauline has a broad industry experience built while working for famous corporations and innovative startups which makes her a great instructor.</p>
+				<ul>
+					<li>Highly enthusiastic problem solver</li>
+					<li>Loves to share information with peers</li>
+				</ul>
+				<div class="instructor-quote">
+					<p>"I absolutely loved to work with Pauline's team while she was Marketing Manager at Delloite. She's a seriously dedicated person and loves to develop awesome digital courses."</p>
+					<span><strong>John Monroe</strong> - General Manager, Delloite</span>
+				</div>
+				<div class="buttons">
+					<a class="button-outline mfp-close as-button" href="#instructors">BACK</a> <a class="button-solid mfp-close as-button page-scroll" href="#header">REGISTER NOW</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="instructor-2" class="instructor-details-container zoom-anim-dialog mfp-hide">
+		<div class="row">
+			<button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+			<div class="col-md-7">
+				<img class="img-responsive img-rounded" src="http://placehold.it/722x704/aaa/393d48/" alt="details image">
+			</div>
+			<div class="col-md-5">
+				<h3>Mike Brown</h3>
+				<hr>
+				<h4>Business Developer</h4>
+				<p>Mike is a highly skiled business developer with hands-on experience in managemnt positions at popular organiations and in his own companies.</p>
+				<ul>
+					<li>Great communicator with public speaking skills</li>
+					<li>Works best when challenged with cool projects</li>
+				</ul>
+				<div class="instructor-quote">
+					<p>"My experience with Mike goes back in the days when he was starting his own company and pushed some cool and innovative courses together with high quality services."</p>
+					<span><strong>Bill Vancouver</strong> - General Manager, Monopoly</span>
+				</div>
+				<div class="buttons">
+					<a class="button-outline mfp-close as-button" href="#instructors">BACK</a> <a class="button-solid mfp-close as-button page-scroll" href="#header">REGISTER NOW</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="instructor-3" class="instructor-details-container zoom-anim-dialog mfp-hide">
+		<div class="row">
+			<button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
+			<div class="col-md-7">
+				<img class="img-responsive img-rounded" src="http://placehold.it/722x704/aaa/393d48/" alt="details image">
+			</div>
+			<div class="col-md-5">
+				<h3>Ronnie Blake</h3>
+				<hr>
+				<h4>Web Content Creator</h4>
+				<p>Ronnie is a passionate creator and his greatest passion is to find value where nobody expects. He's also into developing digital courses and platforms.</p>
+				<ul>
+					<li>Great programming and design abilities</li>
+					<li>Finds value where nobody sees any</li>
+				</ul>
+				<div class="instructor-quote">
+					<p>"Ronnie is a great observer and likes to use his skills to solve everyday problems with digital courses and services. You have a lot to learn from his experience."</p>
+					<span><strong>Finley Stream</strong> - General Manager, Invest Bank</span>
+				</div>
+				<div class="buttons">
+					<a class="button-outline mfp-close as-button" href="#instructors">BACK</a> <a class="button-solid mfp-close as-button page-scroll" href="#header">REGISTER NOW</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end of magnific popup instructor details content -->
+	
+	
+	<!-- FREQUENT QUESTIONS -->
+	<div id="frequent-questions" class="frequent-questions">
+		<div class="container">
+			<h2 class="text-center">Questions</h2>
+			<img class="decorative-line" src="images/decorative-line.svg" alt="decorative line">
+			<div class="row">
+				<div class="col-md-6">
+					<ul class="frequent-ul list-unstyled">
+						<li class="question clearfix"><span class="frequent-icon">Q</span> <h4 class="frequent-text">What happens after I register ?</h4></li>
+						<li class="answer clearfix"><span class="frequent-icon">A</span> <span class="frequent-text">Upon registration you will receive a link on your email address which redirects you to our online training course platform. There you will confirm your credentials.</span></li>
+						<li class="question clearfix"><span class="frequent-icon">Q</span> <h4 class="frequent-text">Is the course guaranteed, can I ask for refunds ?</h4></li>
+						<li class="answer clearfix"><span class="frequent-icon">A</span> <span class="frequent-text">Of course, the course is 100% guaranteed which means you can ask for a refund anytime and receive the full reimbursement of your money. So your investment is risk free.</span></li>
+					</ul>
+				</div>
+				<div class="col-md-6">
+					<ul class="frequent-ul list-unstyled">
+						<li class="question clearfix"><span class="frequent-icon">Q</span> <h4 class="frequent-text">Are you sure the content is genuine ?</h4></li>
+						<li class="answer clearfix"><span class="frequent-icon">A</span> <span class="frequent-text">This training course stands on its own with original content based on real life case studies conducted by our instructors. We haven't used other online resources free or paid.</span></li>
+						<li class="question clearfix"><span class="frequent-icon">Q</span> <h4 class="frequent-text">Where do I go upon finishing the course ?</h4></li>
+						<li class="answer clearfix"><span class="frequent-icon">A</span> <span class="frequent-text">Last chapter of the online training is reserved for pointing you towards the right direction after completing all the materials in the course. So you know what to do next.</span></li>
+					</ul>
+				</div>
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of frequent-questions -->
+	
+
+	<!-- STATISTICS -->
+	<div class="statistics">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="number-container">
+					<p><span class="counter">250</span></p>
+					<p class="big-numbers-heading">Happy Students</p>
+					</div>
+					<div class="number-container">
+					<p><span class="counter">480</span></p>
+					<p class="big-numbers-heading">Delivered Projects</p>
+					</div>
+					<div class="number-container">
+					<p><span class="counter">642</span></p>
+					<p class="big-numbers-heading">Online Orders</p>
+					</div>
+					<div class="number-container">
+					<p><span class="counter">120</span></p>
+					<p class="big-numbers-heading">Staff Members</p>
+					</div>
+				</div>
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of statistics -->
+
+	
+	<!-- ENDORSEMENT -->
+	<div class="endorsement">
+		<div class="container">
+			<div class="endorsement-wrapper">
+				<p class="seventy-percent-width">Argo's online sales training course is highly recommended to anyone intrested in developing their online sales skills, either for courses or services. I've taken this course last year and now I run my own business.</p>
+				<h5>Larry Volgen - StartUp Founder</h5>
+				<a class="button-solid page-scroll" href="#header">REGISTER NOW</a>
+			</div>
+		</div> <!-- end of container -->
+	</div> <!-- end of endorsement -->
+	
+	
+	<!-- FOOTER -->
+	<div id="footer" class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="footer-pane">
+						<h4>Contact Details</h4>
+						<div class="footer-details">
+							<p>Argo is an online training course that will teach you how to sell online</p>
+							<p><i class="fa fa-map-marker" aria-hidden="true"></i> 22 Innovative Area, San Francisco, CA 94043, California, USA</p>
+							<p><i class="fa fa-phone" aria-hidden="true"><a class="phone-number" href="tel:003024630820">+30 2463 0820</a></i>&nbsp;&nbsp;<i class="fa fa-mobile" aria-hidden="true"><a class="phone-number" href="tel:003071630231">+30 7163 0231</a></i>
+							<i class="fa fa-envelope-o" aria-hidden="true"><a href="mailto:contact@argo.com">contact@argo.com</a></i>&nbsp;&nbsp;<i class="fa fa-chrome" aria-hidden="true"><a href="#your-link">www.argo.com</a></i></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="footer-pane">
+						<h4>Social Networks</h4>
+						<!-- Social Icons Container -->
+						<div class="social-icons-container">
+							<span class="fa-stack fa-lg">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa-lg">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa-lg">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa-lg">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa-lg">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+							<span class="fa-stack fa-lg">
+								<a href="#your-link-here">
+									<i class="fa fa-circle fa-stack-2x"></i>
+									<i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+								</a>
+							</span>
+						</div> <!-- end of social icons container -->
+						<h4>Official Partners</h4>
+						<p>Delivery Services: <a>www.fastcompany.com</a> <br> Music Media Streaming: <a>www.musicstream.com</a></p>
+					</div>
+				</div>
+				
+				<div class="col-md-4">
+					<div class="footer-pane">
+						<!-- Contact Form -->
+						<form id="ContactForm" data-toggle="validator">
+							<div class="form-group first">
+								<input type="text" class="form-control-input" id="cname" placeholder="Name" required>
+							</div>
+							<div class="form-group second">
+								<input type="email" class="form-control-input" id="cemail" placeholder="Email" required>
+							</div>
+							<div class="form-group third">
+								<textarea class="form-control-textarea" id="cmessage" placeholder="Write your message here" rows="4" required></textarea>
+							</div>
+							<button type="submit" class="form-control-submit-button">SUBMIT</button>
+							<div class="form-message">
+								<div id="cmsgSubmit" class="h3 text-center hidden"></div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div> <!-- end of row -->
+		</div> <!-- end of container -->
+	</div> <!-- end of footer -->
+	
+	
+	<!-- COPYRIGHT -->
+	<div class="copyright">
+		<div class="container text-center">
+			<span>Copyright © Argo - Training Course Landing Page Template by</span> <a class="inverse" href="http://www.inovatik.com">Inovatik</a>
+		</div> <!-- end of container -->
+	</div> <!-- end of copyright -->
+			
+	
+	<!-- SCRIPTS -->
+	<script src="js/jquery-2.2.4.min.js" type="text/javascript"></script> <!-- jQuery v2.2.4 - necessary for Bootstrap's JavaScript plugins -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script> <!-- Bootstrap v3.3.7 -->
+	<script src="js/jquery.easing.min.js" type="text/javascript"></script> <!-- jQuery Easing v1.3 for smooth scrolling between anchors -->
+	<script src="js/jquery.countdown.min.js" type="text/javascript"></script> <!-- The Final Countdown v2.2.0 plugin for jQuery -->
+	<script src="js/swiper.min.js" type="text/javascript"></script> <!-- Swiper v3.4.2 for image gallery swiper -->
+	<script src="js/jquery.magnific-popup.js" type="text/javascript"></script> <!-- Magnific Popup v1.1.0 for lightboxes -->
+	<script src="js/waypoints.min.js" type="text/javascript"></script> <!-- jQuery Waypoints v2.0.3 required by Counter-Up -->
+	<script src="js/jquery.counterup.min.js" type="text/javascript"></script> <!-- Counter-Up v1.0 for statistics -->
+	<script src="js/validator.min.js" type="text/javascript"></script> <!--  Validator.js v0.11.8 Bootstrap plugin that validates the registration form -->
+	<script src="js/scripts.js" type="text/javascript"></script> <!-- Custom scripts -->
+	
+</body>
+</html>
