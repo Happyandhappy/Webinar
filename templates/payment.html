@@ -573,6 +573,7 @@
     }
 
     function submitStripeForm() {
+      preloader.fadeIn(10);
       // initiate variables with form content
       var firstname = $("#firstname").val();
       var lastname = $("#lastname").val();
@@ -599,6 +600,7 @@
           "&stripeToken=" +
           stripeToken,
         success: function(text) {
+          preloader.fadeOut(10);
           if (text == "success") {
             formSuccessStripe();
           } else {

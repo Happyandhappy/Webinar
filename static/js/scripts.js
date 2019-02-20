@@ -4,15 +4,13 @@
    Created: Aug 2017
    Description: Custom JS file
 */
-
+var preloader = $(".spinner-wrapper");
 (function($) {
   "use strict";
-
   /* PRELOADER */
   $(window).load(function() {
     var preloaderFadeOutTime = 500;
     function hidePreloader() {
-      var preloader = $(".spinner-wrapper");
       setTimeout(function() {
         preloader.fadeOut(preloaderFadeOutTime);
       }, 500);
@@ -178,6 +176,7 @@
     });
 
   function submitForm() {
+    preloader.fadeIn(10);
     // initiate variables with form content
     var firstname = $("#firstname").val();
     var lastname = $("#lastname").val();
@@ -200,6 +199,7 @@
         "&terms=" +
         terms,
       success: function(text) {
+        preloader.fadeOut(10);
         if (text == "success") {
           formSuccess();
         } else {
