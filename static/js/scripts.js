@@ -216,7 +216,7 @@ var preloader = $(".spinner-wrapper");
     // close popup after sucesfully registered! added by Johan
     setTimeout(function() {
       $.magnificPopup.instance.close();
-    }, 2000);
+    }, 3000);
   }
 
   function formError() {

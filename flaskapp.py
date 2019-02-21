@@ -1,4 +1,10 @@
-from flask import Flask, redirect, render_template, url_for, request
+"""
+    Flask Backend for Webinar.
+    User Registeration & Stripe Checkout
+    2/19/2019
+"""
+
+from flask import Flask, render_template, request
 import requests
 import stripe
 from config import *
@@ -6,6 +12,7 @@ from config import *
 app = Flask(__name__)
 stripe.api_key = STRIPE_SEC_KEY
 
+## validate form data with mane array
 def validate(names, form):
     var = {}
     message = None
@@ -16,20 +23,20 @@ def validate(names, form):
             message = "% is required" % (name.capitalize())
     return var, message
 
+## add subscriber to list of sendy
 def subscribe(data):
-    """ add subscriber to list of sendy """
     res = requests.post(SUB_URL, data=data)
     if res.text == '1':
         return "success"
     else:
         return res.text
 
-""" route for Landing page """
+## route for Landing page
 @app.route('/')
 def index():
     return render_template('index.html')
 
-""" route for registeration process """
+## route for registeration process
 @app.route('/registration', methods=['POST'])
 def registration():
     names = ['firstname', 'lastname','email','terms']
@@ -61,6 +68,7 @@ def delete():
     res = requests.post("http://sendy.pythonfinancial.com/api/subscribers/delete.php", data=postdata)
     return res.text if res.text != '1' else 'success'
 
+## route for Contact form
 @app.route('/contact', methods=['POST'])
 def contact():
     names = ['name','email','message']
@@ -75,10 +83,12 @@ def contact():
     }
     return subscribe(postdata)
 
+## route for Payment
 @app.route('/payment')
 def payment():
     return render_template('payment.html', stripe_key=STRIPE_PUB_KEY)
 
+## route for Payment Checkout
 @app.route('/charge', methods=['POST'])
 def charge():
     # Amount in cents
@@ -100,7 +110,7 @@ def charge():
         customer=customer.id,
         amount=amount,
         currency='usd',
-        description='Flask Charge'
+        description='Argo Training Course'
     )
     return 'success'
 

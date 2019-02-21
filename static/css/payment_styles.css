@@ -2130,3 +2130,7 @@ a:hover.back-to-top {
 #card-errors {
   color: #ff3d39;
 }
+
+.text-center.text-success{
+    color: #00ff5c!important;
+}
