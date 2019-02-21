@@ -2134,3 +2134,6 @@ a:hover.back-to-top {
 .text-center.text-success{
     color: #00ff5c!important;
 }
+.modal-content{
+    color:black;
+}
