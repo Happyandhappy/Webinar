@@ -93,7 +93,6 @@ def payment():
 def charge():
     # Amount in cents
     amount = 9900
-    print(request.form)
     names = ['firstname', 'lastname', 'phone','email','terms','stripeToken']
     data, message = validate(names, request.form)
     if message:

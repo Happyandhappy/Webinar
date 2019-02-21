@@ -376,7 +376,6 @@ var preloader = $(".spinner-wrapper");
   });
 
   /* Stripe Form */
-
     // Create a Stripe client.
     var stripe = Stripe(document.getElementById('stripe_key').value);
     // Create an instance of Elements.
@@ -488,7 +487,6 @@ var preloader = $(".spinner-wrapper");
       $("#myModal").modal();
       // close popup after sucesfully registered! added by Johan
     }
-
     function formErrorStripe() {
       $("#StripeForm")
         .removeClass()
