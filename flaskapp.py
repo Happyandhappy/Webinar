@@ -9,6 +9,7 @@ import requests
 import stripe
 import os
 from airtable import Airtable
+from config import *
 
 app = Flask(__name__)
 stripe.api_key = STRIPE_SEC_KEY
@@ -107,7 +108,7 @@ def charge():
     if len(res) == 0:
         return "Email was not registered!"
     elif 'Registered Basic' in res[0]['fields']['Tags']:
-        return "Already purchased"
+        return "Already purchased!"
 
     ## Transaction process in Stripe
     try:
