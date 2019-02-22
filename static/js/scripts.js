@@ -175,8 +175,7 @@ var preloader = $(".spinner-wrapper");
       }
     });
 
-  function submitForm() {
-    preloader.fadeIn(10);
+  function submitForm() {    
     // initiate variables with form content
     var firstname = $("#firstname").val();
     var lastname = $("#lastname").val();
@@ -198,8 +197,7 @@ var preloader = $(".spinner-wrapper");
         email +
         "&terms=" +
         terms,
-      success: function(text) {
-        preloader.fadeOut(10);
+      success: function(text) {        
         if (text == "success") {
           formSuccess();
         } else {
@@ -216,6 +214,7 @@ var preloader = $(".spinner-wrapper");
     // close popup after sucesfully registered! added by Johan
     setTimeout(function() {
       $.magnificPopup.instance.close();
+      window.location = "/thankyou";
     }, 3000);
   }
 
@@ -377,126 +376,126 @@ var preloader = $(".spinner-wrapper");
 
   /* Stripe Form */
     // Create a Stripe client.
-    var stripe = Stripe(document.getElementById('stripe_key').value);
-    // Create an instance of Elements.
-    var elements = stripe.elements();
+    if (document.getElementById('stripe_key')){
+        var stripe = Stripe(document.getElementById('stripe_key').value);
+        // Create an instance of Elements.
+        var elements = stripe.elements();
 
-    // Custom styling can be passed to options when creating an Element.
-    // (Note that this demo uses a wider set of styles than the guide below.)
-    var style = {
-      base: {
-        color: "white",
-        fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
-        fontSmoothing: "antialiased",
-        fontSize: "16px",
-        "::placeholder": {
-          color: "#aab7c4"
-        },
-        iconColor:"#a5a5a5"
-      },
-      invalid: {
-        color: "#fa755a",
-        iconColor: "#fa755a"
-      }
-    };
+        // Custom styling can be passed to options when creating an Element.
+        // (Note that this demo uses a wider set of styles than the guide below.)
+        var style = {
+          base: {
+            color: "white",
+            fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+            fontSmoothing: "antialiased",
+            fontSize: "16px",
+            "::placeholder": {
+              color: "#aab7c4"
+            },
+            iconColor:"#a5a5a5"
+          },
+          invalid: {
+            color: "#fa755a",
+            iconColor: "#fa755a"
+          }
+        };
 
-    // Create an instance of the card Element.
-    var card = elements.create("card", { hidePostalCode: true, style: style });
+        // Create an instance of the card Element.
+        var card = elements.create("card", { hidePostalCode: true, style: style });
 
-    // Add an instance of the card Element into the `card-element` <div>.
-    card.mount("#card-element");
+        // Add an instance of the card Element into the `card-element` <div>.
+        card.mount("#card-element");
 
-    // Handle real-time validation errors from the card Element.
-    card.addEventListener("change", function(event) {
-      var displayError = document.getElementById("card-errors");
-      if (event.error) {
-        displayError.textContent = event.error.message;
-      } else {
-        displayError.textContent = "";
-      }
-    });
-
-    // Handle form submission.
-    var form = document.getElementById("StripeForm");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      submitMSG(1, '');
-      if (document.getElementById("stripeToken").value !== "") {
-        stripeTokenHandler(document.getElementById("stripeToken").value);
-        return;
-      }
-
-      stripe.createToken(card).then(function(result) {
-        if (result.error) {
-          // Inform the user if there was an error.
-          var errorElement = document.getElementById("card-errors");
-          errorElement.textContent = result.error.message;
-        } else {
-          // Send the token to your server.
-          stripeTokenHandler(result.token.id);
-        }
-      });
-    });
-
-    // Submit the form with the token ID.
-    function stripeTokenHandler(token) {
-      // Insert the token ID into the form so it gets submitted to the server
-      var ele = document.getElementById("stripeToken");
-      ele.setAttribute("value", token);
-
-      /* Stripe FORM */
-      var s = $("#StripeForm")
-        .validator("validate")
-        .has(".has-error:visible").length;
-      if (s === 0) {
-        submitStripeForm();
-      }
-      console.log(s);
-    }
-
-    function submitStripeForm() {
-      preloader.fadeIn(10);
-      // initiate variables with form content
-      var firstname = $("#firstname").val();
-      var lastname = $("#lastname").val();
-      var email = $("#email").val();
-      var phone = $("#phone").val();
-      var terms = $("#terms").val();
-      var stripeToken = $("#stripeToken").val();
-      card.clear();
-      $("#stripeToken").val("");
-      $.ajax({
-        type: "POST",
-        url: "/charge",
-        data: "firstname=" + firstname + "&lastname=" + lastname + "&phone=" + phone + "&email=" + email + "&terms=" + terms + "&stripeToken=" + stripeToken,
-        success: function(text) {
-          preloader.fadeOut(10);
-          if (text == "success") {
-            formSuccessStripe();
+        // Handle real-time validation errors from the card Element.
+        card.addEventListener("change", function(event) {
+          var displayError = document.getElementById("card-errors");
+          if (event.error) {
+            displayError.textContent = event.error.message;
           } else {
-            formError();
-            submitMSG(false, text);
+            displayError.textContent = "";
           }
-        }
-      });
-    }
+        });
 
-    function formSuccessStripe() {
-      $("#StripeForm")[0].reset();
-      submitMSG(true, "You Are Registered!");
-      $("#myModal").modal();
-      // close popup after sucesfully registered! added by Johan
-    }
-    function formErrorStripe() {
-      $("#StripeForm")
-        .removeClass()
-        .addClass("shake animated")
-        .one(
-          "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
-          function() {
-            $(this).removeClass();
+        // Handle form submission.
+        var form = document.getElementById("StripeForm");
+        form.addEventListener("submit", function(event) {
+          event.preventDefault();
+          submitMSG(1, '');
+          if (document.getElementById("stripeToken").value !== "") {
+            stripeTokenHandler(document.getElementById("stripeToken").value);
+            return;
           }
-        );
+
+          stripe.createToken(card).then(function(result) {
+            if (result.error) {
+              // Inform the user if there was an error.
+              var errorElement = document.getElementById("card-errors");
+              errorElement.textContent = result.error.message;
+            } else {
+              // Send the token to your server.
+              stripeTokenHandler(result.token.id);
+            }
+          });
+        });
+
+        // Submit the form with the token ID.
+        function stripeTokenHandler(token) {
+          // Insert the token ID into the form so it gets submitted to the server
+          var ele = document.getElementById("stripeToken");
+          ele.setAttribute("value", token);
+
+          /* Stripe FORM */
+          var s = $("#StripeForm")
+            .validator("validate")
+            .has(".has-error:visible").length;
+          if (s === 0) {
+            submitStripeForm();
+          }
+          console.log(s);
+        }
+
+        function submitStripeForm() {
+          // initiate variables with form content
+          var firstname = $("#firstname").val();
+          var lastname = $("#lastname").val();
+          var email = $("#email").val();
+          var phone = $("#phone").val();
+          var terms = $("#terms").val();
+          var stripeToken = $("#stripeToken").val();
+          card.clear();
+          $("#stripeToken").val("");
+          $.ajax({
+            type: "POST",
+            url: "/charge",
+            data: "firstname=" + firstname + "&lastname=" + lastname + "&phone=" + phone + "&email=" + email + "&terms=" + terms + "&stripeToken=" + stripeToken,
+            success: function(text) {
+              if (text == "success") {
+                formSuccessStripe();
+              } else {
+                formError();
+                submitMSG(false, text);
+              }
+            }
+          });
+        }
+
+        function formSuccessStripe() {
+          $("#StripeForm")[0].reset();
+          submitMSG(true, "You Are Registered!");
+          $("#myModal").modal();
+          // close popup after sucesfully registered! added by Johan
+        }
+        function formErrorStripe() {
+          $("#StripeForm")
+            .removeClass()
+            .addClass("shake animated")
+            .one(
+              "webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend",
+              function() {
+                $(this).removeClass();
+              }
+            );
+        }
     }
 
     function submitMSG(valid, msg) {

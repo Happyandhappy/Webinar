@@ -7,10 +7,12 @@
 from flask import Flask, render_template, request
 import requests
 import stripe
-from config import *
+import os
+from airtable import Airtable
 
 app = Flask(__name__)
 stripe.api_key = STRIPE_SEC_KEY
+at = Airtable(base_key=BASE_ID, table_name='Users', api_key=API_KEY)
 
 ## validate form data with mane array
 def validate(names, form):
@@ -25,16 +27,34 @@ def validate(names, form):
 
 ## add subscriber to list of sendy
 def subscribe(data):
-    res = requests.post(SUB_URL, data=data)
-    if res.text == '1':
-        return "success"
+    fields = {
+        "Name"  : data['name'],
+        "Phone" : data['phone'],
+        "Email" : data['email'],
+        "Tags"  : [data['tags']]
+    }
+
+    ## for first registration , check email existance in table
+    if data['tags'] == "Registered Preview":
+        res = at.search('Email', data['email'])
+        if len(res) > 0:
+            return "Email Already Registered!"
+        at.insert(fields)
     else:
-        return res.text
+    ## for Payment case, update the status of Tags
+        at.update_by_field('Email', data['email'], fields)
+    return "success"
+
 
 ## route for Landing page
 @app.route('/')
 def index():
     return render_template('index.html')
+
+## route for Thank you page
+@app.route('/thankyou')
+def thankyou():
+    return render_template('thankyou.html')
 
 ## route for registeration process
 @app.route('/registration', methods=['POST'])
@@ -43,30 +63,13 @@ def registration():
     data, message = validate(names, request.form)
     if message:
         return message
-    postdata = {
-        "name": data['firstname'] + " " + data['lastname'],
-        "email": data['email'],
-        "list": LIST_ID,
-        "boolean": "true"
-    }
-    return subscribe(postdata)
-
-
-@app.route('/deletesubscriber', methods=['POST'])
-def delete():
-    if 'email' in request.form:
-        email = request.form['email']
-    else:
-        return "Email is required"
-
-    postdata = {
-        "api_key" : API_KEY,
-        "list_id" : LIST_ID,
-        "email"   : email
-    }
-
-    res = requests.post("http://sendy.pythonfinancial.com/api/subscribers/delete.php", data=postdata)
-    return res.text if res.text != '1' else 'success'
+    # register to Airtable
+    return subscribe({
+        "name"  : data['firstname'] + " " + data['lastname'],
+        "email" : data['email'],
+        "phone" : '',
+        "tags"  : "Registered Preview"
+    })
 
 ## route for Contact form
 @app.route('/contact', methods=['POST'])
@@ -75,13 +78,13 @@ def contact():
     data, message = validate(names, request.form)
     if message:
         return message
-    postdata = {
+
+    return subscribe({
         "name": data['name'],
         "email": data['email'],
         "list": LIST_ID,
         "boolean": "true"
-    }
-    return subscribe(postdata)
+    })
 
 ## route for Payment
 @app.route('/payment')
@@ -91,7 +94,6 @@ def payment():
 ## route for Payment Checkout
 @app.route('/charge', methods=['POST'])
 def charge():
-    # Amount in cents
     amount = 9900
     names = ['firstname', 'lastname', 'phone','email','terms','stripeToken']
     data, message = validate(names, request.form)
@@ -100,18 +102,31 @@ def charge():
     email = data['email']
     token = data['stripeToken']
 
-    customer = stripe.Customer.create(
-        email=email,
-        source=token
-    )
+    ## check email was registered in Registration page
+    res = at.search('Email', data['email'])
+    if len(res) == 0:
+        return "Email was not registered!"
+    elif 'Registered Basic' in res[0]['fields']['Tags']:
+        return "Already purchased"
 
-    charge = stripe.Charge.create(
-        customer=customer.id,
-        amount=amount,
-        currency='usd',
-        description='Argo Training Course'
-    )
-    return 'success'
+    ## Transaction process in Stripe
+    try:
+        customer = stripe.Customer.create( email=email, source=token)
+        stripe.Charge.create(
+            customer=customer.id,
+            amount=amount,
+            currency='usd',
+            description='RE Cash Infusion'
+        )
+    except:
+        return 'Problem with the card'
+
+    return subscribe({
+        "name"  : data['firstname'] + " " + data['lastname'],
+        "email" : data['email'],
+        "phone" : data['phone'],
+        "tags"  : "Registered Basic"
+    })
 
 if __name__ == '__main__':
     app.run(debug=True)

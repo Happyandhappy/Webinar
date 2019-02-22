@@ -2219,3 +2219,7 @@ a:hover.back-to-top {
     background: #6fb32b;
     outline: none;
   }
+
+  .text-danger{
+    color: #ff3d39 !important;
+  }
