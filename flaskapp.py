@@ -52,7 +52,7 @@ def index():
     return render_template('index.html')
 
 ## route for Thank you page
-@app.route('/thankyou')
+@app.route('/thank-you')
 def thankyou():
     return render_template('thankyou.html')
 

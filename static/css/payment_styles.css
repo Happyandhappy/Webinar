@@ -2223,3 +2223,7 @@ a:hover.back-to-top {
   .text-danger{
     color: #ff3d39 !important;
   }
+  
+  .above-price{
+    margin-top: 15px;
+  }

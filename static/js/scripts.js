@@ -214,7 +214,7 @@ var preloader = $(".spinner-wrapper");
     // close popup after sucesfully registered! added by Johan
     setTimeout(function() {
       $.magnificPopup.instance.close();
-      window.location = "/thankyou";
+      window.location = "/thank-you";
     }, 3000);
   }
 
